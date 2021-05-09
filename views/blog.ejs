@@ -1,0 +1,23 @@
+
+<%- include("partials/header"); -%>
+     <h1 class = "blog" >Latest Blogs</h1>
+      <%  posts.forEach(function(post){ %>
+
+        <div class = "row" style = "padding-top : 30px;">
+        <div class = "col-lg-4 col-md-4">
+
+            <img class = "image" src = "<%=post.image%>" alt = "Image Reprsentation of <%=post.title%>" />
+        </div>
+              <div class = "col-lg-8 col-md-8">
+                <h1 class = "blog_heading"><%= post.title %></h1>
+                <p class = "blog_p"><%=post.content.substring(0, 150) + " ..."%>
+                <a style = "color:blue;" href="/posts/<%=post._id%>">Read more</a>
+                </p>
+                </div>
+            </div>
+        <hr style = "background-color : #888888; height : 1px;"/>
+
+      <% }) %>
+
+
+<%- include("partials/footer"); -%>
